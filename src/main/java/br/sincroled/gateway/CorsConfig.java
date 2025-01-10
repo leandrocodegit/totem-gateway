@@ -12,7 +12,7 @@ public class CorsConfig  {
     @Bean
     public CorsWebFilter  corsConfigurationSource() {
         CorsConfiguration corsConfig = new CorsConfiguration();
-        corsConfig.addAllowedOrigin("http://sincroled.com.br");
+        corsConfig.addAllowedOrigin("https://sincroled.com.br");
         corsConfig.addAllowedHeader("*");
         corsConfig.addAllowedMethod("*");
         corsConfig.setAllowCredentials(true);
