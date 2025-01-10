@@ -17,15 +17,15 @@ public class Routes {
     @Bean
     public RouteLocator routesApi(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("/api/totem", r ->
-                        r.path("totem/**").uri("http://totem:8081/")
+                .route("totem", r ->
+                        r.path("/totem/**").uri("http://totem:8081/")
                 ).build();
     }
 
     @Bean
     public RouteLocator routesComando(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("/api/comando", r ->
+                .route("comando", r ->
                         r.path("comando/**").uri("http://comando:8082/")
                 ).build();
     }
