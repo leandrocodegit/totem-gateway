@@ -21,7 +21,7 @@ public class Routes {
                         r.path("api/**")
                                 .filters(f -> f.filter(filter)
                                         .rewritePath("api", "/totem"))
-                                .uri("http://totem:8081/")
+                                .uri("http://totem:8081")
                 ).build();
     }
 
