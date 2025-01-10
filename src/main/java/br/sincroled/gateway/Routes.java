@@ -26,7 +26,7 @@ public class Routes {
     public RouteLocator routesComando(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("comando", r ->
-                        r.path("comando/**").uri("http://comando:8082/")
+                        r.path("/comando/**").uri("http://comando:8082/")
                 ).build();
     }
 }
