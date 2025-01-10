@@ -1,7 +1,5 @@
 server:
   port: 9000
-  servlet:
-    context-path: /api
 #  ssl:
 #    key-store: classpath:keystore.p12
 #    key-store-password: Pass2020!
@@ -14,7 +12,7 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: ["http://sincroled.com.br"]
+            allowedOrigins: ["http://sincroled.com.br/"]
             #           allowedOrigins: [ "*"]
             allowedHeaders: "*"
             allowedMethods:
