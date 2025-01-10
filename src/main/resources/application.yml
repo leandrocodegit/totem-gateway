@@ -14,7 +14,7 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: ["http://169.150.1.85","http://vps55601.publiccloud.com.br", "http://localhost:4200", "http://sincroled.com.br", "https://sincroled.com.br"]
+            allowedOrigins: ["http://sincroled.com.br"]
             #           allowedOrigins: [ "*"]
             allowedHeaders: "*"
             allowedMethods:
