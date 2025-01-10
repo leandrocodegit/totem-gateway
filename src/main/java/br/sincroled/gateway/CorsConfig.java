@@ -9,18 +9,9 @@ import org.springframework.web.cors.reactive.CorsWebFilter;
 import org.springframework.web.reactive.config.CorsRegistry;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
 
+@Configuration
+public class CorsConfig  {
 
-public class CorsConfig implements WebFluxConfigurer {
-
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-
-        registry.addMapping("/**")
-                .allowedOrigins("http://sincroled.com.br")
-                .allowedMethods("GET", "POST", "PUT", "DELETE")
-                .allowedHeaders("*")
-                .allowCredentials(true);
-    }
     @Bean
     public CorsWebFilter  corsConfigurationSource() {
         CorsConfiguration corsConfig = new CorsConfiguration();
@@ -30,7 +21,7 @@ public class CorsConfig implements WebFluxConfigurer {
         corsConfig.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", corsConfig);
+        source.registerCorsConfiguration("/totem/**", corsConfig);
         return new CorsWebFilter(source);
     }
 }
