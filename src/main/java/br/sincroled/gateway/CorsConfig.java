@@ -17,7 +17,8 @@ public class CorsConfig implements WebFluxConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
 
-        registry.addMapping("/comando/**")
+        registry.addMapping("/**")
+                .allowedOrigins("http://sincroled.com.br")
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowedHeaders("*")
                 .allowCredentials(true);
