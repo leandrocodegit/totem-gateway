@@ -12,7 +12,7 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: ["http://sincroled.com.br/"]
+            allowedOrigins: ["http://sincroled.com.br"]
             #           allowedOrigins: [ "*"]
             allowedHeaders: "*"
             allowedMethods:
