@@ -15,5 +15,5 @@ services:
       - gateway_totem-network
 
 networks:
-  backend-toten_totem-network:
+  gateway_totem-network:
     external: true
