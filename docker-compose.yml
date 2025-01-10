@@ -12,8 +12,8 @@ services:
       - JAVA_OPTS=-Dspring.profiles.active=prod
     container_name: gateway
     networks:
-      - gateway_totem-network
+      - backend-toten_totem-network
 
 networks:
-  gateway_totem-network:
+  backend-toten_totem-network:
     external: true
