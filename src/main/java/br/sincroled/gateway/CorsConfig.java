@@ -9,19 +9,24 @@ import org.springframework.web.cors.reactive.CorsWebFilter;
 import org.springframework.web.reactive.config.CorsRegistry;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
 
+import java.util.Collections;
+
 @Configuration
 public class CorsConfig {
 
     @Bean
     public CorsWebFilter  corsConfigurationSource() {
         CorsConfiguration corsConfig = new CorsConfiguration();
-        corsConfig.addAllowedOrigin("http://sincroled.com.br");
-        corsConfig.addAllowedHeader("*");
-        corsConfig.addAllowedMethod("*");
-        corsConfig.setAllowCredentials(true);
+        corsConfig.addAllowedHeader("*"); // Permitir todos os cabeçalhos
+        corsConfig.addAllowedMethod("*"); // Permitir todos os métodos
+        corsConfig.setAllowCredentials(false); // Não permitir credenciais (cookies, headers de autorização, etc.)
+
+        // Defina uma única origem permitida (exemplo: http://sincroled.com.br)
+        corsConfig.setAllowedOrigins(Collections.singletonList("http://sincroled.com.br")); // Permitir apenas uma origem específica
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", corsConfig);
+        source.registerCorsConfiguration("/**", corsConfig); // Aplicar a configuração para todos os endpoints
+
         return new CorsWebFilter(source);
     }
 }
