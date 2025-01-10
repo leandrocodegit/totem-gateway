@@ -10,17 +10,8 @@ import org.springframework.web.reactive.config.CorsRegistry;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
 
 @Configuration
-public class CorsConfig  implements WebFluxConfigurer {
+public class CorsConfig {
 
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        // Configura CORS para permitir a origem desejada
-        registry.addMapping("/**")
-                .allowedOrigins("http://sincroled.com.br")  // Origem permitida
-                .allowedMethods("GET", "POST", "PUT", "DELETE")  // Métodos permitidos
-                .allowedHeaders("*")  // Permitir todos os cabeçalhos
-                .allowCredentials(true);  // Se for necessário enviar credenciais
-    }
     @Bean
     public CorsWebFilter  corsConfigurationSource() {
         CorsConfiguration corsConfig = new CorsConfiguration();
