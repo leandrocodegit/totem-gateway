@@ -7,6 +7,5 @@ server:
     key-alias: myssl
 
 spring:
-  webflux:
-    cors:
-      enabled=false:
+  codec:
+    max-in-memory-size: 10MB

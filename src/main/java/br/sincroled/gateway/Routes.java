@@ -29,4 +29,13 @@ public class Routes {
                         r.path("/comando/**").uri("http://comando:8082/")
                 ).build();
     }
+
+    @Bean
+    public RouteLocator routesFirmware(RouteLocatorBuilder builder) {
+        return builder.routes()
+                .route("firmware", r ->
+                        r.path("/firmware/**")
+                                .uri("http://comando:8082/")
+                ).build();
+    }
 }

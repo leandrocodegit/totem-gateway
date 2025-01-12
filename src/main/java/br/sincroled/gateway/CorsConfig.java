@@ -19,6 +19,10 @@ public class CorsConfig  {
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/totem/**", corsConfig);
+        source.registerCorsConfiguration("/firmware/**", corsConfig);
+
         return new CorsWebFilter(source);
     }
+
+
 }
