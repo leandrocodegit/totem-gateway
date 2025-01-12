@@ -38,4 +38,13 @@ public class Routes {
                                 .uri("http://comando:8082/")
                 ).build();
     }
+
+    @Bean
+    public RouteLocator routesIntegracao(RouteLocatorBuilder builder) {
+        return builder.routes()
+                .route("integracao", r ->
+                        r.path("/integracao/**")
+                                .uri("http://comando:8082/")
+                ).build();
+    }
 }
