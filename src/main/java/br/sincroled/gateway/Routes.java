@@ -18,7 +18,7 @@ public class Routes {
     public RouteLocator routesApi(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("totem", r ->
-                        r.path("/totem/**").uri("http://totem:8081/")
+                        r.path("/totem/**").uri("http://localhost:8081/")
                 ).build();
     }
 
@@ -26,7 +26,7 @@ public class Routes {
     public RouteLocator routesComando(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("comando", r ->
-                        r.path("/comando/**").uri("http://comando:8082/")
+                        r.path("/comando/**").uri("http://localhost:8082/")
                 ).build();
     }
 
