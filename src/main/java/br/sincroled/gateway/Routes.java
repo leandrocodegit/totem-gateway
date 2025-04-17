@@ -15,6 +15,45 @@ public class Routes {
     }
 
     @Bean
+    public RouteLocator testeApiA(RouteLocatorBuilder builder) {
+        return builder.routes()
+                .route("testea", r ->
+                        r.path("/testea/**").uri("http://localhost:8083/")
+                ).build();
+    }
+    @Bean
+    public RouteLocator testeApiB(RouteLocatorBuilder builder) {
+        return builder.routes()
+                .route("refresh", r ->
+                        r.path("/refresh/**").uri("http://localhost:8080/realms/master/protocol/openid-connect/token")
+                ).build();
+    }
+
+    @Bean
+    public RouteLocator scopeApiB(RouteLocatorBuilder builder) {
+        return builder.routes()
+                .route("scope", r ->
+                        r.path("/scope/**").uri("http://localhost:8083/")
+                ).build();
+    }
+
+    @Bean
+    public RouteLocator loginGoogle(RouteLocatorBuilder builder) {
+        return builder.routes()
+                .route("google", r ->
+                        r.path("/google/**").uri("http://localhost:8080/realms/master/.well-known/openid-configuration")
+                ).build();
+    }
+
+    @Bean
+    public RouteLocator loginGoogled(RouteLocatorBuilder builder) {
+        return builder.routes()
+                               .route("resources", r ->
+                        r.path("/resources/**").uri("http://localhost:8080/resources/")
+                ).build();
+    }
+
+    @Bean
     public RouteLocator routesApi(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("totem", r ->
