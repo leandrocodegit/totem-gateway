@@ -17,8 +17,16 @@ public class Routes {
     @Bean
     public RouteLocator testeApiA(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("testea", r ->
-                        r.path("/testea/**").uri("http://localhost:8083/")
+                .route("modulo", r ->
+                        r.path("/modulo/**").uri("http://localhost:9080/")
+                ).build();
+    }
+
+    @Bean
+    public RouteLocator agendaApi(RouteLocatorBuilder builder) {
+        return builder.routes()
+                .route("agenda", r ->
+                        r.path("/agenda/**").uri("http://localhost:9081/")
                 ).build();
     }
     @Bean
