@@ -17,8 +17,10 @@ public class Routes {
     @Bean
     public RouteLocator testeApiA(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("modulo", r ->
-                        r.path("/modulo/**").uri("http://localhost:9080/")
+                .route("modulos", r ->
+                        r.path("/modulos/**").filters(filter ->
+                            filter.rewritePath("/modulos","/modulo")
+                        ).uri("http://localhost:9080/")
                 ).build();
     }
 
@@ -35,6 +37,14 @@ public class Routes {
         return builder.routes()
                 .route("usuario", r ->
                         r.path("/usuario/**").uri("http://localhost:9082/")
+                ).build();
+    }
+
+    @Bean
+    public RouteLocator clienteApi(RouteLocatorBuilder builder) {
+        return builder.routes()
+                .route("cliente", r ->
+                        r.path("/cliente/**").uri("http://localhost:9084/")
                 ).build();
     }
 }
