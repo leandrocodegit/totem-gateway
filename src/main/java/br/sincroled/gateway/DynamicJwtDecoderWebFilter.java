@@ -29,7 +29,7 @@ public class DynamicJwtDecoderWebFilter implements WebFilter {
         String realm = exchange.getRequest().getHeaders().getFirst("X-Tenant-ID");
         var host = exchange.getRequest().getPath().pathWithinApplication().value();
 
-        if(host.equals("/cliente"))
+        if(host.equals("/cliente") || host.contains("/processo"))
             return chain.filter(exchange);
 
         if(false && realm == null){

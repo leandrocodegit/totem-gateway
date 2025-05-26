@@ -47,4 +47,14 @@ public class Routes {
                         r.path("/cliente/**").uri("http://localhost:9084/")
                 ).build();
     }
+
+    @Bean
+    public RouteLocator bpmnApiA(RouteLocatorBuilder builder) {
+        return builder.routes()
+                .route("processo", r ->
+                        r.path("/processo/**").filters(filter ->
+                                filter.rewritePath("/processo","/")
+                        ).uri("http://localhost:8085/")
+                ).build();
+    }
 }
