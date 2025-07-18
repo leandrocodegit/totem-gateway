@@ -13,6 +13,14 @@ public class Routes {
     public Routes(RouteFilter filter) {
         this.filter = filter;
     }
+    @Bean
+    public RouteLocator routesCloudaflare(RouteLocatorBuilder builder) {
+        return builder.routes()
+                .route("validate", r ->
+                        r.path("/validate/**").uri("http://localhost:9082/")
+                ).build();
+    }
+
 
     @Bean
     public RouteLocator testeApiA(RouteLocatorBuilder builder) {
@@ -36,7 +44,7 @@ public class Routes {
     public RouteLocator usuarioApi(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("usuario", r ->
-                        r.path("/usuario/**").uri("http://localhost:9082/")
+                        r.path("/usuario/**").uri("http://localhost:9082")
                 ).build();
     }
 
